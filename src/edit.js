@@ -8,11 +8,13 @@ import useSWR from 'swr';
  */
 import { useBlockProps } from '@wordpress/block-editor';
 import { useEffect, useState } from '@wordpress/element';
+import TickerControl from './TickerControl'
 
 /**
  * Internal dependencies
  */
 import './editor.scss';
+
 
 /**
  * Edit function
@@ -43,10 +45,10 @@ export default function Edit(props) {
 	console.log("Symbol default: ", symbol)
 	return (
 		
-		<p { ...useBlockProps() }>
-			{ ! isLoading
-				? `Loaded ${ retrievedData.length } items`
-				: 'Loading...' }
-		</p>
+		<div { ...useBlockProps() }>
+
+			<TickerControl />
+
+		</div>
 	);
 }
