@@ -5,15 +5,15 @@
 	"version": "1.2.3",
 	"title": "Polygon Api Block",
 	"category": "widgets",
-	"icon": "dashicons-chart-line",
+	"icon": "chart-line",
 	"textdomain": "polygon-api-block",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
 	"style": "file:./style-index.css",
 	"attributes": {
-		"symbol": {
+		"ticker": {
 			"type": "string",
-			"default": "Add your symbol"
+			"default": "AAPL"
 		}
 	}
 }
