@@ -1,5 +1,6 @@
 ### Todo 
 ### Release 1.0
+- [ ] WordPress InputControl working on back-end, data persistance
 - [ ] Basic return of API call with SWR, from Polygon
 - [ ] Adding Debounce to wait to call API
 - [ ] Showcase getting system date via data store calls `wp.select`
