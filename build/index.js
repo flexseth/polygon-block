@@ -38,7 +38,19 @@ __webpack_require__.r(__webpack_exports__);
 /**
  * Edit function
  */
-function Edit() {
+function Edit(props) {
+  console.log(props.attributes);
+
+  // init props and attributes for block
+  const {
+    attributes: {
+      symbol
+    }
+  } = props;
+  const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)();
+
+  // const { symbol } = props
+  console.log(props);
   const fetcher = (...args) => fetch(...args).then(res => res.json());
   const {
     data,
@@ -46,6 +58,7 @@ function Edit() {
     isLoading
   } = (0,swr__WEBPACK_IMPORTED_MODULE_1__["default"])('https://api.imgflip.com/get_memes', fetcher);
   const retrievedData = data?.data?.memes;
+  console.log("Symbol default: ", symbol);
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)()
   }, !isLoading ? `Loaded ${retrievedData.length} items` : 'Loading...');
@@ -1750,7 +1763,7 @@ const SWRConfig = swr_internal__WEBPACK_IMPORTED_MODULE_3__.OBJECT.definePropert
 /***/ (function(module) {
 
 "use strict";
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/polygon-api-block","version":"1.2.3","title":"Polygon Api Block","category":"widgets","icon":"twitter","textdomain":"polygon-api-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/polygon-api-block","version":"1.2.3","title":"Polygon Api Block","category":"widgets","icon":"block-default","textdomain":"polygon-api-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","attributes":{"symbol":{"type":"string","default":"Add your symbol"}}}');
 
 /***/ })
 

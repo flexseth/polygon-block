@@ -5,9 +5,15 @@
   "version": "1.2.3",
   "title": "Polygon Api Block",
   "category": "widgets",
-  "icon": "twitter",
+  "icon": "block-default",
   "textdomain": "polygon-api-block",
   "editorScript": "file:./index.js",
   "editorStyle": "file:./index.css",
-  "style": "file:./style-index.css"
+  "style": "file:./style-index.css",
+  "attributes": {
+    "symbol": {
+      "type": "string",
+      "default": "Add your symbol"
+    }
+  }
 }

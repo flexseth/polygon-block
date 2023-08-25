@@ -17,7 +17,21 @@ import './editor.scss';
 /**
  * Edit function
  */
-export default function Edit() {
+export default function Edit(props) {
+
+	console.log(props.attributes)
+
+	// init props and attributes for block
+	const  { 
+		attributes: {symbol} 
+		} = props
+	
+	const blockProps = useBlockProps()
+
+
+	// const { symbol } = props
+	console.log(props)
+
 	const fetcher = ( ...args ) =>
 		fetch( ...args ).then( ( res ) => res.json() );
 	const { data, error, isLoading } = useSWR(
@@ -26,7 +40,9 @@ export default function Edit() {
 	);
 	const retrievedData = data?.data?.memes;
 
+	console.log("Symbol default: ", symbol)
 	return (
+		
 		<p { ...useBlockProps() }>
 			{ ! isLoading
 				? `Loaded ${ retrievedData.length } items`
