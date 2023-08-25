@@ -19,6 +19,14 @@ Showcase using the SWR data fetching library with a bleeding edge WordPress + Re
 - [ ] Toggle Polygon views (daily, all time, monthly/etc) - Interactivity API
 - [ ] Send off for review
 
+### Release 1.3
+- [ ] Use custom post types to create ticker widgets that can display across pages
+- [ ] Create new "closing price" widget - CPT UI
+- [ ] Allow for exporting of widget HTML code, create a new template part with
+- [ ] Move to a certain page area based on category or tag
+- [ ] Allow to only have one block per page or post
+- [ ] 
+
 ### Todo: Enhancements
 - [ ] *MUSTACHE*    API template, include a flag for API key on scaffolding
 - [ ] *MUSTACHE*    Improve API template  
