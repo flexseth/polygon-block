@@ -1,3 +1,6 @@
+# Mission Objective
+Showcase using the SWR data fetching library with a bleeding edge WordPress + React component, to create a user interface that displays in the editor. The user should be able to type in a stock symbol that is publicly traded on the Dow Jones Industrial Average (DJIA) and the most recent closing price shows up in the display pane.
+
 ### Todo 
 ### Release 1.0
 - [ ] WordPress InputControl working on back-end, data persistance
