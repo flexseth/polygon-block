@@ -1,54 +1,65 @@
 /**
- * External dependencies
+ * External dependencies - React.js
  */
 import useSWR from 'swr';
 
 /**
- * WordPress dependencies
+ * WordPress dependencies - Block Editor
  */
 import { useBlockProps } from '@wordpress/block-editor';
-import { useEffect, useState } from '@wordpress/element';
-import TickerControl from './TickerControl'
+// import { useState } from '@wordpress/element';
+
+/**
+ * Custom WordPress components
+ */
+// import TickerControl from './TickerControl'
+import { __experimentalInputControl as InputControl } from '@wordpress/components';
+// import displayControl from './displayControl';
 
 /**
  * Internal dependencies
  */
 import './editor.scss';
 
+/**
+ * Data mapping
+ */
+
+/**
+ * UI
+ */
+// import UI2 from './UI2';
+
+
 
 /**
  * Edit function
  */
-export default function Edit(props) {
+export default function Edit( props ) {
 
-	console.log(props.attributes)
+	const {
+		attributes: {
+			ticker
+		},
+		setAttributes
+	} = props
 
-	// init props and attributes for block
-	const  { 
-		attributes: {symbol} 
-		} = props
-	
-	const blockProps = useBlockProps()
+	const onChangeHandler = (e) => {
+		setAttributes( {ticker: e} )
+	}
 
 
-	// const { symbol } = props
-	console.log(props)
-
-	const fetcher = ( ...args ) =>
-		fetch( ...args ).then( ( res ) => res.json() );
-	const { data, error, isLoading } = useSWR(
-		'https://api.imgflip.com/get_memes',
-		fetcher
-	);
-	const retrievedData = data?.data?.memes;
-
-	console.log("Symbol default: ", symbol)
 	return (
-		
-		<div { ...useBlockProps() }>
+		<InputControl
+			label="Stock symbol"
+			placeholder={ticker.default}
+			value={ticker}
+			onChange={onChangeHandler}
+		/>
 
-			<TickerControl />
 
-		</div>
-	);
+	)
+
+
+	// displays when the block is created in the editor (Block Editor display)
 }
