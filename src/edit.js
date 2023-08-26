@@ -7,30 +7,12 @@ import useSWR from 'swr';
  * WordPress dependencies - Block Editor
  */
 import { useBlockProps } from '@wordpress/block-editor';
-// import { useState } from '@wordpress/element';
-
-/**
- * Custom WordPress components
- */
-// import TickerControl from './TickerControl'
 import { __experimentalInputControl as InputControl } from '@wordpress/components';
-// import displayControl from './displayControl';
 
 /**
  * Internal dependencies
  */
 import './editor.scss';
-
-/**
- * Data mapping
- */
-
-/**
- * UI
- */
-// import UI2 from './UI2';
-
-
 
 /**
  * Edit function
