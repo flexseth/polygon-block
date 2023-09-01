@@ -5,7 +5,7 @@ Showcase using the SWR data fetching library with a bleeding edge WordPress + Re
 ### Release 1.0
 - [x] WordPress InputControl working on back-end, data persistance
 - [ ] Basic return of API call with SWR, from Polygon
-- [ ] Adding Debounce to wait to call API
+- [x] Adding Debounce to wait to call API
 - [ ] Showcase getting system date via data store calls `wp.select`
 - [ ] Reuse code from React app to calculate date for API call
 - [ ] Simple block display in editor
