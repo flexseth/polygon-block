@@ -2,6 +2,8 @@
  * External dependencies - React.js
  */
 import useSWR from 'swr';
+import { debounce } from "debounce";
+
 
 /**
  * WordPress dependencies - Block Editor
@@ -26,19 +28,36 @@ export default function Edit( props ) {
 		setAttributes
 	} = props
 
+	
 	const onChangeHandler = (e) => {
 		setAttributes( {ticker: e} )
+	}	
+	
+	const TickerControl = () => {
+		
+		const debouncedOnChange = debounce(onChangeHandler, 5000);
+
+		const customInputControl = 
+			<InputControl
+				label="Stock symbol"
+				placeholder={ticker.default}
+				value={ticker}
+				onChange={debouncedOnChange} 
+			/>;
+
+		console.log("Waited!!")
+
+		return customInputControl
+		
 	}
 
-
 	return (
-		<InputControl
-			label="Stock symbol"
-			placeholder={ticker.default}
-			value={ticker}
-			onChange={onChangeHandler}
-		/>
+		
+		<>
+			
+			<TickerControl />
 
+		</>
 
 	)
 
