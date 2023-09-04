@@ -3,6 +3,7 @@
  */
 import useSWR from 'swr';
 import { debounce } from "debounce";
+import { useEffect } from '@wordpress/element'
 
 
 /**
@@ -51,16 +52,7 @@ export default function Edit( props ) {
 		
 	}
 
-	return (
-		
-		<>
-			
-			<TickerControl />
-
-		</>
-
-	)
-
+	return <TickerControl />
 
 	// displays when the block is created in the editor (Block Editor display)
 }
