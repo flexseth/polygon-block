@@ -3,7 +3,7 @@
  */
 import useSWR from 'swr';
 import { debounce } from "debounce";
-import { useEffect } from '@wordpress/element'
+import { useState, useEffect } from '@wordpress/element'
 
 
 /**
@@ -29,30 +29,33 @@ export default function Edit( props ) {
 		setAttributes
 	} = props
 
-	
-	const onChangeHandler = (e) => {
-		setAttributes( {ticker: e} )
-	}	
-	
-	const TickerControl = () => {
-		
-		const debouncedOnChange = debounce(onChangeHandler, 5000);
-
-		const customInputControl = 
-			<InputControl
-				label="Stock symbol"
-				placeholder={ticker.default}
-				value={ticker}
-				onChange={debouncedOnChange} 
-			/>;
-
-		console.log("Waited!!")
-
-		return customInputControl
-		
+	const onChangeHandler = (newTicker) => {	
+		setAttributes({ticker: newTicker})
 	}
 
-	return <TickerControl />
+	const debouncedOnChange = debounce(onChangeHandler, 5000)
+
+	const BlockProps = useBlockProps();
+
+	const requestOpenClose = () => <Button variant="secondary">Search Open/Close</Button>;
+	
+	return ( 
+
+		<div { ...BlockProps }>
+
+			<InputControl 
+				label="Stock symbol"
+				placeholder={ ticker.default }
+				value={ticker}
+				onChange= { (newTicker) => {
+					debouncedOnChange(newTicker)
+					}
+				}
+			/>
+
+		</div>
+	); 
 
 	// displays when the block is created in the editor (Block Editor display)
+
 }

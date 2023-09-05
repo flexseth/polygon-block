@@ -13,7 +13,11 @@
 	"attributes": {
 		"ticker": {
 			"type": "string",
-			"default": "AAPL"
+			"default": "Enter Stock Symbol"
+		},
+		"isLoaded": {
+			"type": "boolean", 
+			"default": 0
 		}
 	}
 }
